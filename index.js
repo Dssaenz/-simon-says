@@ -12,8 +12,9 @@ class Juego {
   }
 
   inicializar() {
+    this.elegirColor = this.elegirColor.bind(this)
       btnEmpezar.classList.add('hide');
-      this.nivel = 7;
+      this.nivel = 1;
       this.colores = {
           celeste,
           violeta,
@@ -28,6 +29,7 @@ class Juego {
   
   siguienteNivel() {
     this.iluminarSecuencia();
+    this.agregarEventoClick();
   }
   
   // Funcion que trasforma un numero a un color
@@ -60,6 +62,18 @@ class Juego {
   // Funcion para quitar el color y la clase previamente implementadas
   apagarColor(color){
     this.colores[color].classList.remove('light')
+  }
+
+  // Funcion que agrega los eventos de click a los botones
+  agregarEventoClick(){
+    this.colores.celeste.addEventListener('click', this.elegirColor)
+    this.colores.verde.addEventListener('click', this.elegirColor)
+    this.colores.violeta.addEventListener('click', this.elegirColor)
+    this.colores.naranja.addEventListener('click', this.elegirColor)
+  }
+
+  elegirColor(){
+
   }
 }
 function empezarJuego(){
