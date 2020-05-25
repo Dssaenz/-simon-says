@@ -16,7 +16,6 @@ class Juego {
     this.siguienteNivel = this.siguienteNivel.bind(this)
     this.elegirColor = this.elegirColor.bind(this)
     this.toggleBtnEmpezar()
-      btnEmpezar.classList.add('hide');
       this.nivel = 1
       this.colores = {
           celeste,
@@ -128,12 +127,12 @@ class Juego {
   }
 
   ganoElJuego(){
-    swal ( "Oops" ,  "Something went wrong!" ,  "success" )
+    swal ( "Genial" ,  "Ganaste el juego" ,  "success" )
     .then(this.inicializar())
   }
 
   perdioElJuego(){
-    swal ( "Oops" ,  "Something went wrong!" ,  "error" )
+    swal ( "Oops" ,  "Perdiste le juego" ,  "error" )
     .then(this.eliminarEventoClick())
   }
 }
